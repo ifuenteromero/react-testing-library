@@ -13,6 +13,12 @@ const AccessibleComponents = () => {
 				<label htmlFor='search'>Search</label>
 				<input id='search' type='text' />
 			</div>
+			<button aria-label='sign in'>
+				<svg />
+			</button>
+			<button aria-label='sign out'>
+				<svg />
+			</button>
 		</div>
 	);
 };

@@ -12,4 +12,9 @@ test('can select elements by accessible names', () => {
 	const searchInput = screen.getByRole('textbox', { name: /search/i });
 	expect(emailInput).toBeInTheDocument();
 	expect(searchInput).toBeInTheDocument();
+
+	const signInButton = screen.getByRole('button', { name: /sign in/i });
+	const signOutButton = screen.getByRole('button', { name: /sign out/i });
+	expect(signInButton).toBeInTheDocument();
+	expect(signOutButton).toBeInTheDocument();
 });
