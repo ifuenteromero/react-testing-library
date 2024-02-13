@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ColorList from './ColorList';
+import LoadableColorList from './LoadableColorList';
 
 test('getByRole, queryByRole, findByRole finding 0 elements', async () => {
 	render(<ColorList />);
@@ -63,4 +64,31 @@ test('getAllBy, queryAllBy, findAllBy finding > 1 elements', async () => {
 	expect(screen.getAllByRole('listitem')).toHaveLength(3);
 	expect(screen.queryAllByRole('listitem')).toHaveLength(3);
 	expect(await screen.findAllByRole('listitem')).toHaveLength(3);
+});
+
+// When to use each
+
+// Prove an element exists getBy
+
+test('favor using getBy to prove an element exists', () => {
+	render(<ColorList />);
+	const element = screen.getByRole('list');
+	expect(element).toBeInTheDocument();
+});
+
+// Prove an element doesn't exist
+
+test('favor queryBy when proving an element does not exist', () => {
+	render(<ColorList />);
+	const element = screen.queryByRole('textbox');
+	expect(element).not.toBeInTheDocument();
+});
+
+// Make sure an element eventually exists
+
+test('Favor findBy or findAllBy when data fetching', async () => {
+	render(<LoadableColorList />);
+
+	const colors = await screen.findAllByRole('listitem');
+	expect(colors).toHaveLength(3);
 });
