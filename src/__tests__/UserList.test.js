@@ -1,5 +1,5 @@
 import { render, screen, within } from '@testing-library/react';
-import UserList from './UserList';
+import UserList from '../UserList';
 
 const users = [
 	{ name: 'Jane', email: 'jane@gmail.com' },

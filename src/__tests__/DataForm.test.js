@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import DataForm from './DataForm';
+import DataForm from '../DataForm';
 
 test('selecting different elements', () => {
 	render(<DataForm />);

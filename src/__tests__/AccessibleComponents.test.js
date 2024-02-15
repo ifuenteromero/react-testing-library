@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import AccessibleComponents from './AccessibleComponents';
+import AccessibleComponents from '../AccessibleComponents';
 
 test('can select elements by accessible names', () => {
 	render(<AccessibleComponents />);

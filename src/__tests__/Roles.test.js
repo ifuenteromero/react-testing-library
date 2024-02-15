@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Roles from './Roles';
+import Roles from '../Roles';
 
 test('can find elements by role', () => {
 	render(<Roles />);

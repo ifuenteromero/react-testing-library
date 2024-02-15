@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import ColorList from './ColorList';
-import LoadableColorList from './LoadableColorList';
+import ColorList from '../ColorList';
+import LoadableColorList from '../LoadableColorList';
 
 test('getByRole, queryByRole, findByRole finding 0 elements', async () => {
 	render(<ColorList />);
