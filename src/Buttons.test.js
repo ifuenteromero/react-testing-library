@@ -1,9 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import Buttons from './Buttons';
 
 test('the form displays two buttons', () => {
 	render(<Buttons />);
-	const buttons = screen.getAllByRole('button');
+	const form = screen.getByRole('form');
+	const buttons = within(form).getAllByRole('button');
 
 	expect(buttons).toHaveLength(2);
 });
